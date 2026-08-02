@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domo Lua na Serra | Links</title>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            position: relative;
+            overflow-x: hidden;
+            padding: 20px 0;
+            background-color: #1a1a1a;
+        }
+
+        /* Container do vídeo de fundo */
+        #bg-video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -2;
+            transform: translateX(-50%) translateY(-50%);
+            object-fit: cover;
+            object-position: center 20%; /* Força o alinhamento para a parte superior do vídeo */
+        }
+
+        /* Camada para escurecer o vídeo e dar contraste */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        /* Container principal */
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Cabeçalho / Perfil */
+        .profile {
+            margin-bottom: 24px;
+        }
+
+        .profile-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+
+        .profile-bio {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* Container dos botões */
+        .links-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Botões em Glassmorphism */
+        .btn-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(0, 0, 0, 0.35); /* Fundo um pouco mais escuro para destacar sobre o vídeo */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-link i {
+            font-size: 1.2rem;
+        }
+
+        /* Efeito de destaque no botão de WhatsApp */
+        .btn-highlight {
+            background: rgba(37, 211, 102, 0.35);
+            border-color: rgba(37, 211, 102, 0.6);
+        }
+
+        /* Efeito ao passar o mouse / tocar */
+        .btn-link:hover, .btn-link:active {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Rodapé */
+        footer {
+            margin-top: 32px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Vídeo de Fundo -->
+    <video autoplay muted loop playsinline id="bg-video">
+        <source src="assets/fundo.mp4" type="video/mp4">
+        Seu navegador não suporta vídeos em HTML5.
+    </video>
+
+    <!-- Camada de opacidade -->
+    <div class="overlay"></div>
+
+    <!-- Conteúdo da Página -->
+    <div class="container">
+        
+        <header class="profile">
+            <h1 class="profile-title">Domo Lua na Serra</h1>
+            <p class="profile-bio">Ecoturismo com vista para a Serra do Paxixi 🌿✨</p>
+        </header>
+
+        <main class="links-container">
+            
+            <a href="https://wa.me/5567998548169?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20uma%20reserva%20no%20Domo%20Lua%20na%20Serra.%20Seguem%20as%20informa%C3%A7%C3%B5es%3A%0A%E2%80%A2%20Check-in%3A%20%2F%2F____%0A%E2%80%A2%20Check-out%3A%20%2F%2F____%0A%E2%80%A2%20N%C3%BAmero%20de%20h%C3%B3spedes%3A%20___%0A%E2%80%A2%20Alguma%20observa%C3%A7%C3%A3o%3A%20__________" target="_blank" class="btn-link btn-highlight">
+                <i class="fa-brands fa-whatsapp"></i>
+                Informações e Reservas
+            </a>
+
+            <a href="https://domoluanaserra.github.io/domoluanaserra/" target="_blank" class="btn-link">
+                <i class="fa-regular fa-calendar-days"></i>
+                Calendário e Reservas
+            </a>
+
+            <a href="https://web-production-683ad.up.railway.app/promo?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnDsFXqKslv8IyYO4spP2bA-P34k63tvG_PnJ5ZuazM7Nv4Qod5mCD-D4ZQZU_aem__6s76QmZBaN7rRUfqkYSTA&utm_id=97760_v0_s00_e0_tv3" target="_blank" class="btn-link">
+                <i class="fa-solid fa-circle-info"></i>
+                Informações Completas
+            </a>
+
+            <a href="https://maps.app.goo.gl/RT1CVGkVqUZBj9VD8" target="_blank" class="btn-link">
+                <i class="fa-solid fa-location-dot"></i>
+                Localização
+            </a>
+
+            <a href="https://g.page/r/CUd1x_7tuTZCEAE/review" target="_blank" class="btn-link">
+                <i class="fa-solid fa-star"></i>
+                Avalie-nos
+            </a>
+
+            <a href="https://www.instagram.com/domoluanaserrams/?hl=en" target="_blank" class="btn-link">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+            </a>
+
+        </main>
+
+        <footer>
+            <p>© Domo Lua na Serra</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
